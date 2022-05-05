@@ -15,7 +15,7 @@
             <div class="card">
                 <div class="">
                     <h3>Number of Voters </h3>
-                    {{-- <a href="{{ route('manage-voters.create') }}" class="btn btn-success btn-sm">Add New</a> --}}
+                    <a href="{{ route('manage-voters.create') }}" class="btn btn-success btn-sm">Add New</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

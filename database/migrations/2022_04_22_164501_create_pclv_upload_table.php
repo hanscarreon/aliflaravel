@@ -13,12 +13,14 @@ class CreatePclvUploadTable extends Migration
      */
     public function up()
     {
-        Schema::create('pcvl_upload', function (Blueprint $table) {
-            $table->id('pcvlUploadId');
-            $table->string('pcvlUploadPrecinctNumber')->nullable();
-            $table->string('pcvlUploadLegend')->nullable();
-            $table->string('pcvlUploadVotersName')->nullable();
-            $table->string('pcvlUploadVotersAddress')->nullable();
+        Schema::create('pcvl', function (Blueprint $table) {
+            $table->id('pcvlId');
+            $table->string('pcvlPrecinctNumber')->nullable();
+            $table->string('pcvlLegend')->nullable();
+            $table->string('pcvlVotersFirstName')->nullable();
+            $table->string('pcvlVotersLastName')->nullable();
+            $table->string('pcvlVotersAddress')->nullable();
+            $table->string('pcvlDistrict')->nullable();
             $table->string('pcvlMunicipality')->nullable();
             $table->string('pcvlBarangay')->nullable();
             $table->timestamps();
@@ -32,6 +34,6 @@ class CreatePclvUploadTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pcvl_upload');
+        Schema::dropIfExists('pcvl');
     }
 }
