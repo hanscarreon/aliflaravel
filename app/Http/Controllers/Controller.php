@@ -47,4 +47,10 @@ class Controller extends BaseController
 
         return $data;
     }
+
+    public function mb_convert_encoding($data)
+    {
+       $data = mb_convert_encoding($data, 'UTF-8', 'ISO-8859-1');
+       return $data;
+    }
 }

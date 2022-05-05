@@ -4,6 +4,8 @@ namespace App\Imports;
 
 use App\ModelRegistration;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Illuminate\Support\Str;
+
 
 class MembershipImport implements ToModel
 {
@@ -15,15 +17,16 @@ class MembershipImport implements ToModel
     public function model(array $row)
     {
         return new ModelRegistration([
-            'slug_id' => $row[0],
-            'firstname' => $row[1],
+            'slug_id' => Str::random(7),
+            'firstname' => $row[0],
             'middlename' => $row[2],
-            'lastname' => $row[3],
-            'mobile_no' => $row[4],
-            'household_no' => $row[5],
-            'province' => $row[6],
-            'city' => $row[7],
-            'barangay' => $row[8]
+            'lastname' => $row[1],
+            'mobile_no' => $row[3],
+            'household_no' => $row[4],
+            'province' => $row[5],
+            'city' => $row[6],
+            'barangay' => $row[7],
+            'manual' => 1
         ]);
     }
 }

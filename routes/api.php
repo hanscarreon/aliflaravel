@@ -18,8 +18,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('alif')->group(function () {
     Route::prefix('pcvl')->group(function () {
-        Route::post('upload', 'pcvl\PcvlController@uploadFile')->name('uploadFile');
+        Route::post('upload', 'manage_data\pcvl\PcvlController@pcvlUploadFile')->name('pcvlUploadFile');
         Route::get('get', 'pcvl\PcvlController@getPcvlApi')->name('getPcvlApi');
+    });
+    Route::prefix('pop')->group(function () {
+        Route::post('upload', 'manage_data\pop\PopController@popUploadFile')->name('popUploadFile');
     });
 });
 
